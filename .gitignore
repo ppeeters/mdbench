@@ -1,0 +1,22 @@
+# Compiled Fortran files
+*.o
+*.mod
+*.out
+mdbnch_fortran
+
+# Julia temporary files
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
