@@ -39,10 +39,11 @@ using Test
         
         initpo!(particles, params)
         
-        # Check that all positions are initialized
-        @test all(particles.x .!= 0.0) || particles.x[1] == 0.0
-        @test all(particles.y .!= 0.0) || particles.y[1] == 0.0
-        @test all(particles.z .!= 0.0) || particles.z[1] == 0.0
+        # Check that positions are properly distributed
+        # Not all particles should have the same position
+        @test length(unique(particles.x)) > 1
+        @test length(unique(particles.y)) > 1
+        @test length(unique(particles.z)) > 1
         
         # Check positions are within box
         @test all(particles.x .>= 0.0)

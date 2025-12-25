@@ -34,7 +34,7 @@ end
 # Initialize positions on FCC lattice
 ###############################################################################
 function initpo!(particles::Particles, params::Parameters)
-    ncell = round(Int, (params.n / 4)^(1.0 / 3.0))
+    ncell = Int(floor((params.n / 4)^(1.0 / 3.0) + 0.5))
     dcell = params.side / ncell
     
     itel = 0
